@@ -1,0 +1,2 @@
+kubernetes/*.yml
+roles/ansible-role-elasticsearch
