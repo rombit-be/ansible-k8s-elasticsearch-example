@@ -1,0 +1,10 @@
+- name: Cleanup kubernetes folder
+  hosts: localhost
+  file:
+    state: absent
+    path: "kubernetes"
+- name: Make kubernetes folder again
+  hosts: localhost
+  file:
+    path: kubernetes
+    state: directory

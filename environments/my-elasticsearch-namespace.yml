@@ -1,0 +1,27 @@
+all:
+  hosts:
+    localhost:
+      ansible_connection: local
+      ansible_python_interpreter: "/usr/bin/env python"
+  vars:
+    k8s_cluster: k8s.staging1.romcore.cloud
+    elasticsearch_storage: 20Gi
+    elasticsearch_storage_class: default
+    k8s_namespace: my-elasticsearch-namespace
+    elasticsearch_replicas: 3
+    elasticsearch_minimum_master_nodes: 2
+    cluster_name: my-elasticsearch-cluster
+    enable_curator: false
+    elasticsearch_limit_memory: 800Mi
+    elasticsearch_java_memory: 400M
+    elasticsearch_cpu_request: 200m
+    elasticsearch_cpu_limit: 2000m
+    elasticsearch_image_version: 6.3.2
+    elasticsearch_image: docker.elastic.co/elasticsearch/elasticsearch-oss
+
+    generate_storage_class: false
+
+    enable_exporter: true
+    elasticsearch_exporter_docker_version: 1.0.2
+    enable_prometheus_service_monitor: "{{ enable_exporter }}"
+    enable_prometheus_alert_rules: "{{ enable_exporter }}"

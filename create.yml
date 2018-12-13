@@ -1,0 +1,5 @@
+- name: Deploy elasticsearch
+  hosts: localhost
+  roles:
+  - setup  
+  - ansible-role-elasticsearch

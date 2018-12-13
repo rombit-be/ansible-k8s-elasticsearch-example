@@ -1,0 +1,3 @@
+- src: git@github.com:rombit-be/ansible-role-elasticsearch.git
+  version: master
+  scm: git
